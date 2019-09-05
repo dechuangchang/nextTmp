@@ -28911,7 +28911,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/zhanghai/Desktop/with-ant-design-app/pages/_error.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -28940,18 +28939,8 @@ var NotFound = function NotFound() {
     subTitle: "Sorry, the page you visited does not exist.",
     extra: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
       href: "/index",
-      type: "primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8
-      },
-      __self: this
-    }, "Back Home"),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
+      type: "primary"
+    }, "Back Home")
   });
 };
 
@@ -28961,18 +28950,8 @@ var ServerError = function ServerError() {
     title: "500",
     subTitle: "Sorry, the server is wrong.",
     extra: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      type: "primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    }, "Back Home"),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
+      type: "primary"
+    }, "Back Home")
   });
 };
 
@@ -28991,19 +28970,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var statusCode = this.props.statusCode;
-      return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 27
-        },
-        __self: this
-      }, statusCode = 404 ? react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(NotFound, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        },
-        __self: this
-      }) : undefined);
+      return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", null, statusCode = 404 ? react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(NotFound, null) : undefined);
     }
   }], [{
     key: "getInitialProps",

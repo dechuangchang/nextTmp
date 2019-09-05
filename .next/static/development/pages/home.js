@@ -66821,7 +66821,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/zhanghai/Desktop/with-ant-design-app/pages/home/index.js";
 
 var FormItem = antd_lib_form__WEBPACK_IMPORTED_MODULE_13___default.a.Item;
 var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
@@ -66831,19 +66830,9 @@ var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
     className: "home",
     style: {
       marginTop: 100
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
+    }
   }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_form__WEBPACK_IMPORTED_MODULE_13___default.a, {
-    layout: "horizontal",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
+    layout: "horizontal"
   }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
     label: "Input Number",
     labelCol: {
@@ -66851,12 +66840,7 @@ var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
     },
     wrapperCol: {
       span: 8
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
+    }
   }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_input_number__WEBPACK_IMPORTED_MODULE_9___default.a, {
     size: "large",
     min: 1,
@@ -66865,19 +66849,9 @@ var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
       width: 100
     },
     defaultValue: 3,
-    name: "inputNumber",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
+    name: "inputNumber"
   }), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement("a", {
-    href: "#",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
+    href: "#"
   }, "Link")), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
     label: "Switch",
     labelCol: {
@@ -66885,20 +66859,10 @@ var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
     },
     wrapperCol: {
       span: 8
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
+    }
   }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_switch__WEBPACK_IMPORTED_MODULE_7___default.a, {
     defaultChecked: true,
-    name: "switch",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
+    name: "switch"
   })), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
     label: "Slider",
     labelCol: {
@@ -66906,19 +66870,9 @@ var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
     },
     wrapperCol: {
       span: 8
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
+    }
   }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_slider__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    defaultValue: 70,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
+    defaultValue: 70
   })), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
     label: "Select",
     labelCol: {
@@ -66926,53 +66880,23 @@ var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
     },
     wrapperCol: {
       span: 8
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
+    }
   }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a, {
     size: "large",
     defaultValue: "lucy",
     style: {
       width: 192
     },
-    name: "select",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
+    name: "select"
   }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(Option, {
-    value: "jack",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: this
+    value: "jack"
   }, "jack"), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(Option, {
-    value: "lucy",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: this
+    value: "lucy"
   }, "lucy"), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(Option, {
     value: "disabled",
-    disabled: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
+    disabled: true
   }, "disabled"), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(Option, {
-    value: "yiminghe",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: this
+    value: "yiminghe"
   }, "yiminghe"))), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
     label: "DatePicker",
     labelCol: {
@@ -66980,19 +66904,9 @@ var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
     },
     wrapperCol: {
       span: 8
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: this
+    }
   }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_date_picker__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    name: "startDate",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: this
+    name: "startDate"
   })), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
     style: {
       marginTop: 48
@@ -67000,31 +66914,16 @@ var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
     wrapperCol: {
       span: 8,
       offset: 8
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: this
+    }
   }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_1___default.a, {
     size: "large",
     type: "primary",
-    htmlType: "submit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 65
-    },
-    __self: this
+    htmlType: "submit"
   }, "OK"), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_1___default.a, {
     size: "large",
     style: {
       marginLeft: 8
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 68
-    },
-    __self: this
+    }
   }, "Cancel"))));
 });
     (function (Component, route) {

@@ -5722,7 +5722,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/zhanghai/Desktop/with-ant-design-app/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/zhanghai/Desktop/nextTmp/.next");
       return error;
     }
   };
@@ -17996,7 +17996,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/zhanghai/Desktop/with-ant-design-app/node_modules/_next@7.0.3@next/dist/client/next-dev */"./node_modules/_next@7.0.3@next/dist/client/next-dev.js");
+module.exports = __webpack_require__(/*! /Users/zhanghai/Desktop/nextTmp/node_modules/_next@7.0.3@next/dist/client/next-dev */"./node_modules/_next@7.0.3@next/dist/client/next-dev.js");
 
 
 /***/ }),
