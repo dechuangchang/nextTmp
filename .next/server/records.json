@@ -1,0 +1,81 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "external \"react\"": 0,
+      "external \"antd/lib/button\"": 1,
+      "node_modules/_null-loader@2.0.0@null-loader/dist/cjs.js!node_modules/_antd@3.23.1@antd/lib/button/style/index.js": 2,
+      "external \"@babel/runtime/regenerator\"": 3,
+      "external \"next/app\"": 4,
+      "external \"antd/lib/result\"": 5,
+      "external \"antd/lib/select\"": 6,
+      "external \"antd/lib/form\"": 7,
+      "external \"antd/lib/date-picker\"": 8,
+      "external \"antd/lib/slider\"": 9,
+      "external \"antd/lib/switch\"": 10,
+      "external \"antd/lib/input-number\"": 11,
+      "multi ./pages/_app.js": 12,
+      "node_modules/_next@7.0.3@next/dist/build/webpack/loaders/next-babel-loader.js??ref--5!pages/_app.js": 13,
+      "node_modules/_ignore-loader@0.1.2@ignore-loader/index.js!less/common.less": 14,
+      "multi ./pages/_error.js": 15,
+      "node_modules/_next@7.0.3@next/dist/build/webpack/loaders/next-babel-loader.js??ref--5!pages/_error.js": 16,
+      "node_modules/_null-loader@2.0.0@null-loader/dist/cjs.js!node_modules/_antd@3.23.1@antd/lib/result/style/index.js": 17,
+      "multi ./pages/home/index.js": 18,
+      "node_modules/_next@7.0.3@next/dist/build/webpack/loaders/next-babel-loader.js??ref--5!pages/home/index.js": 19,
+      "node_modules/_null-loader@2.0.0@null-loader/dist/cjs.js!node_modules/_antd@3.23.1@antd/lib/date-picker/style/index.js": 20,
+      "node_modules/_null-loader@2.0.0@null-loader/dist/cjs.js!node_modules/_antd@3.23.1@antd/lib/slider/style/index.js": 21,
+      "node_modules/_null-loader@2.0.0@null-loader/dist/cjs.js!node_modules/_antd@3.23.1@antd/lib/switch/style/index.js": 22,
+      "node_modules/_null-loader@2.0.0@null-loader/dist/cjs.js!node_modules/_antd@3.23.1@antd/lib/input-number/style/index.js": 23,
+      "node_modules/_null-loader@2.0.0@null-loader/dist/cjs.js!node_modules/_antd@3.23.1@antd/lib/select/style/index.js": 24,
+      "node_modules/_null-loader@2.0.0@null-loader/dist/cjs.js!node_modules/_antd@3.23.1@antd/lib/form/style/index.js": 25,
+      "node_modules/_ignore-loader@0.1.2@ignore-loader/index.js!pages/home/index.less": 26,
+      "multi node_modules/_next@7.0.3@next/dist/pages/_document.js": 27,
+      "external \"/Users/zhanghai/Desktop/with-ant-design-app/node_modules/_next@7.0.3@next/dist/pages/_document.js\"": 28
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+      "17": 17,
+      "18": 18,
+      "19": 19,
+      "20": 20,
+      "21": 21,
+      "22": 22,
+      "23": 23,
+      "24": 24,
+      "25": 25,
+      "26": 26,
+      "27": 27,
+      "28": 28
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/SCfdTH9c0hmf0cwc1RTCG/pages/_app.js": 0,
+      "static/SCfdTH9c0hmf0cwc1RTCG/pages/_error.js": 1,
+      "static/SCfdTH9c0hmf0cwc1RTCG/pages/home.js": 2,
+      "static/SCfdTH9c0hmf0cwc1RTCG/pages/_document.js": 3
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3
+    ]
+  }
+}
