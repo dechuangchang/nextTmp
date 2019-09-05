@@ -88,10 +88,153 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./js/actions/common.js":
+/*!******************************!*\
+  !*** ./js/actions/common.js ***!
+  \******************************/
+/*! exports provided: getCurrency */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrency", function() { return getCurrency; });
+/* harmony import */ var _constants_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/index */ "./js/constants/index.js");
+/* harmony import */ var _common_ajax__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/ajax */ "./js/common/ajax.js");
+
+
+const getCurrency = data => {
+  return {
+    type: _constants_index__WEBPACK_IMPORTED_MODULE_0__["GETCURRENCY"],
+    data: [1, 2, 3]
+  };
+};
+
+/***/ }),
+
+/***/ "./js/common/ajax.js":
+/*!***************************!*\
+  !*** ./js/common/ajax.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/_@babel_runtime-corejs2@7.0.0@@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! qs */ "qs");
+/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_2__);
+
+//https://blog.csdn.net/frank_come/article/details/80010611
+
+
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.timeout = 600000; // 自定义判断元素类型JS
+
+function toType(obj) {
+  return {}.toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+} // 参数过滤函数
+
+
+function filterNull(o) {
+  for (var key in o) {
+    if (toType(o[key]) === 'string') {
+      o[key] = o[key].trim();
+    } else if (toType(o[key]) === 'object') {
+      o[key] = filterNull(o[key]);
+    } else if (toType(o[key]) === 'array') {
+      o[key] = filterNull(o[key]);
+    }
+  }
+
+  return o;
+} //整理数据
+
+
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.transformRequest = data => {
+  if (data) {
+    data = filterNull(data);
+  }
+
+  if (data instanceof FormData) {
+    return data;
+  } else {
+    data = qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify(data);
+    return data;
+  }
+}; // 路由请求拦截
+// http request 拦截器
+
+
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.interceptors.request.use(config => {
+  config.headers['X-Requested-With'] = 'XMLHttpRequest';
+
+  if (config.method == 'get') {
+    config.params = filterNull(config.params);
+  }
+
+  return config;
+}, error => {
+  return _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a.reject(error.response);
+}); // 路由响应拦截
+// http response 拦截器
+
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.interceptors.response.use(response => {
+  if (response.data.status == '4008') {
+    window.location.href = "/user.html#/login";
+    return null;
+  }
+
+  return response;
+}, error => {
+  return _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a.reject(error.response); // 返回接口返回的错误信息
+});
+/* harmony default export */ __webpack_exports__["default"] = (axios__WEBPACK_IMPORTED_MODULE_1___default.a);
+
+/***/ }),
+
+/***/ "./js/constants/index.js":
+/*!*******************************!*\
+  !*** ./js/constants/index.js ***!
+  \*******************************/
+/*! exports provided: NAVSHOW, MENULIST, SETTINGSHOW, DEFAULTMENUKEYS, LANGUAGE, GETCURRENCY, FINDREWARDLIST */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NAVSHOW", function() { return NAVSHOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MENULIST", function() { return MENULIST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGSHOW", function() { return SETTINGSHOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULTMENUKEYS", function() { return DEFAULTMENUKEYS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE", function() { return LANGUAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GETCURRENCY", function() { return GETCURRENCY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FINDREWARDLIST", function() { return FINDREWARDLIST; });
+const NAVSHOW = 'NAVSHOW';
+const MENULIST = 'MENULIST';
+const SETTINGSHOW = 'SETTINGSHOW';
+const DEFAULTMENUKEYS = 'DEFAULTMENUKEYS';
+const LANGUAGE = 'LANGUAGE';
+const GETCURRENCY = 'GETCURRENCY';
+const FINDREWARDLIST = 'FINDREWARDLIST';
+
+/***/ }),
+
+/***/ "./node_modules/_@babel_runtime-corejs2@7.0.0@@babel/runtime-corejs2/core-js/promise.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/_@babel_runtime-corejs2@7.0.0@@babel/runtime-corejs2/core-js/promise.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/library/fn/promise");
+
+/***/ }),
 
 /***/ "./node_modules/_antd@3.23.1@antd/lib/button/style/index.js":
 /*!******************************************************************!*\
@@ -209,8 +352,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd_lib_form__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(antd_lib_form__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./index.less */ "./pages/home/index.less");
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _js_actions_common__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../js/actions/common */ "./js/actions/common.js");
 
 
 
@@ -226,132 +372,164 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var FormItem = antd_lib_form__WEBPACK_IMPORTED_MODULE_13___default.a.Item;
-var Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
+var _dec, _class;
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  return react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement("div", {
-    className: "home",
-    style: {
-      marginTop: 100
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_form__WEBPACK_IMPORTED_MODULE_13___default.a, {
-    layout: "horizontal"
-  }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
-    label: "Input Number",
-    labelCol: {
-      span: 8
-    },
-    wrapperCol: {
-      span: 8
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_input_number__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    size: "large",
-    min: 1,
-    max: 10,
-    style: {
-      width: 100
-    },
-    defaultValue: 3,
-    name: "inputNumber"
-  }), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement("a", {
-    href: "#"
-  }, "Link")), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
-    label: "Switch",
-    labelCol: {
-      span: 8
-    },
-    wrapperCol: {
-      span: 8
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_switch__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    defaultChecked: true,
-    name: "switch"
-  })), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
-    label: "Slider",
-    labelCol: {
-      span: 8
-    },
-    wrapperCol: {
-      span: 8
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_slider__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    defaultValue: 70
-  })), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
-    label: "Select",
-    labelCol: {
-      span: 8
-    },
-    wrapperCol: {
-      span: 8
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    size: "large",
-    defaultValue: "lucy",
-    style: {
-      width: 192
-    },
-    name: "select"
-  }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(Option, {
-    value: "jack"
-  }, "jack"), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(Option, {
-    value: "lucy"
-  }, "lucy"), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(Option, {
-    value: "disabled",
-    disabled: true
-  }, "disabled"), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(Option, {
-    value: "yiminghe"
-  }, "yiminghe"))), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
-    label: "DatePicker",
-    labelCol: {
-      span: 8
-    },
-    wrapperCol: {
-      span: 8
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_date_picker__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    name: "startDate"
-  })), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(FormItem, {
-    style: {
-      marginTop: 48
-    },
-    wrapperCol: {
-      span: 8,
-      offset: 8
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    size: "large",
-    type: "primary",
-    htmlType: "submit"
-  }, "OK"), react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    size: "large",
-    style: {
-      marginLeft: 8
-    }
-  }, "Cancel"))));
-});
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement;
+
+
+
+const FormItem = antd_lib_form__WEBPACK_IMPORTED_MODULE_13___default.a.Item;
+const Option = antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a.Option;
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    currencyList: state.currencyList
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return Object(redux__WEBPACK_IMPORTED_MODULE_16__["bindActionCreators"])({
+    getCurrency: _js_actions_common__WEBPACK_IMPORTED_MODULE_17__["getCurrency"]
+  }, dispatch);
+};
+
+let App = (_dec = Object(react_redux__WEBPACK_IMPORTED_MODULE_15__["connect"])(mapStateToProps, mapDispatchToProps), _dec(_class = class App extends react__WEBPACK_IMPORTED_MODULE_14___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentWillMount() {}
+
+  componentDidMount() {
+    console.log(this.props);
+  }
+
+  render() {
+    let {
+      currencyList,
+      getCurrency
+    } = this.props;
+    return __jsx("div", {
+      className: "home",
+      style: {
+        marginTop: 100
+      }
+    }, currencyList.map(item => __jsx("span", {
+      key: item
+    }, item)), __jsx(antd_lib_form__WEBPACK_IMPORTED_MODULE_13___default.a, {
+      layout: "horizontal"
+    }, __jsx(FormItem, {
+      label: "Input Number",
+      labelCol: {
+        span: 8
+      },
+      wrapperCol: {
+        span: 8
+      }
+    }, __jsx(antd_lib_input_number__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      size: "large",
+      min: 1,
+      max: 10,
+      style: {
+        width: 100
+      },
+      defaultValue: 3,
+      name: "inputNumber"
+    }), __jsx("a", {
+      href: "#"
+    }, "Link")), __jsx(FormItem, {
+      label: "Switch",
+      labelCol: {
+        span: 8
+      },
+      wrapperCol: {
+        span: 8
+      }
+    }, __jsx(antd_lib_switch__WEBPACK_IMPORTED_MODULE_7___default.a, {
+      onChange: () => {
+        getCurrency();
+      },
+      defaultChecked: true,
+      name: "switch"
+    })), __jsx(FormItem, {
+      label: "Slider",
+      labelCol: {
+        span: 8
+      },
+      wrapperCol: {
+        span: 8
+      }
+    }, __jsx(antd_lib_slider__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      defaultValue: 70
+    })), __jsx(FormItem, {
+      label: "Select",
+      labelCol: {
+        span: 8
+      },
+      wrapperCol: {
+        span: 8
+      }
+    }, __jsx(antd_lib_select__WEBPACK_IMPORTED_MODULE_11___default.a, {
+      size: "large",
+      defaultValue: "lucy",
+      style: {
+        width: 192
+      },
+      name: "select"
+    }, __jsx(Option, {
+      value: "jack"
+    }, "jack"), __jsx(Option, {
+      value: "lucy"
+    }, "lucy"), __jsx(Option, {
+      value: "disabled",
+      disabled: true
+    }, "disabled"), __jsx(Option, {
+      value: "yiminghe"
+    }, "yiminghe"))), __jsx(FormItem, {
+      label: "DatePicker",
+      labelCol: {
+        span: 8
+      },
+      wrapperCol: {
+        span: 8
+      }
+    }, __jsx(antd_lib_date_picker__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      name: "startDate"
+    })), __jsx(FormItem, {
+      style: {
+        marginTop: 48
+      },
+      wrapperCol: {
+        span: 8,
+        offset: 8
+      }
+    }, __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      size: "large",
+      type: "primary",
+      htmlType: "submit"
+    }, "OK"), __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      size: "large",
+      style: {
+        marginLeft: 8
+      }
+    }, "Cancel"))));
+  }
+
+}) || _class);
+/* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
-/***/ "./pages/home/index.less":
-/*!*******************************!*\
-  !*** ./pages/home/index.less ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ 3:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./pages/home/index.js ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./pages/home/index.js */"./pages/home/index.js");
+module.exports = __webpack_require__(/*! /Users/zhanghai/Desktop/nextTmp/pages/home/index.js */"./pages/home/index.js");
 
 
 /***/ }),
@@ -433,6 +611,39 @@ module.exports = require("antd/lib/switch");
 
 /***/ }),
 
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
+
+/***/ }),
+
+/***/ "core-js/library/fn/promise":
+/*!*********************************************!*\
+  !*** external "core-js/library/fn/promise" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "qs":
+/*!*********************!*\
+  !*** external "qs" ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("qs");
+
+/***/ }),
+
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -441,6 +652,28 @@ module.exports = require("antd/lib/switch");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
+
+/***/ "redux":
+/*!************************!*\
+  !*** external "redux" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
 
 /***/ })
 

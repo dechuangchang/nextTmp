@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -139,94 +139,58 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+var __jsx = react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement;
 
 
+const NotFound = () => __jsx(antd_lib_result__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  status: "404",
+  title: "404",
+  subTitle: "Sorry, the page you visited does not exist.",
+  extra: __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/index",
+    type: "primary"
+  }, "Back Home")
+});
 
-var NotFound = function NotFound() {
-  return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_lib_result__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    status: "404",
-    title: "404",
-    subTitle: "Sorry, the page you visited does not exist.",
-    extra: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      href: "/index",
-      type: "primary"
-    }, "Back Home")
-  });
-};
+const ServerError = () => __jsx(antd_lib_result__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  status: "500",
+  title: "500",
+  subTitle: "Sorry, the server is wrong.",
+  extra: __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    type: "primary"
+  }, "Back Home")
+});
 
-var ServerError = function ServerError() {
-  return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_lib_result__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    status: "500",
-    title: "500",
-    subTitle: "Sorry, the server is wrong.",
-    extra: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      type: "primary"
-    }, "Back Home")
-  });
-};
-
-var Error =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Error, _React$Component);
-
-  function Error() {
-    _classCallCheck(this, Error);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Error).apply(this, arguments));
+class Error extends react__WEBPACK_IMPORTED_MODULE_4___default.a.Component {
+  static getInitialProps({
+    res,
+    err
+  }) {
+    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+    return {
+      statusCode
+    };
   }
 
-  _createClass(Error, [{
-    key: "render",
-    value: function render() {
-      var statusCode = this.props.statusCode;
-      return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", null, statusCode = 404 ? react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(NotFound, null) : undefined);
-    }
-  }], [{
-    key: "getInitialProps",
-    value: function getInitialProps(_ref) {
-      var res = _ref.res,
-          err = _ref.err;
-      var statusCode = res ? res.statusCode : err ? err.statusCode : null;
-      return {
-        statusCode: statusCode
-      };
-    }
-  }]);
+  render() {
+    let {
+      statusCode
+    } = this.props;
+    return __jsx("div", null, statusCode = 404 ? __jsx(NotFound, null) : undefined);
+  }
 
-  return Error;
-}(react__WEBPACK_IMPORTED_MODULE_4___default.a.Component);
-
-
+}
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/_error.js ***!
   \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./pages/_error.js */"./pages/_error.js");
+module.exports = __webpack_require__(/*! /Users/zhanghai/Desktop/nextTmp/pages/_error.js */"./pages/_error.js");
 
 
 /***/ }),

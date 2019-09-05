@@ -1,4 +1,7 @@
 import App, {Container} from 'next/app'
+import { Provider } from 'react-redux';
+import configureStore from '../js/store/configureStore';
+const store = configureStore();
 import React from 'react'
 import '../less/common.less'
 export default class MyApp extends App {
@@ -15,16 +18,15 @@ export default class MyApp extends App {
   render () {
     const {Component, pageProps} = this.props
     return (
-      <Container>
-        
-        {
-          pageProps.statusCode ? null:
-          <p>Next.js</p>
-        }
-        
-        <Component {...pageProps} />
-        
-      </Container>
+      
+        <Provider store={store}>
+          {
+            pageProps.statusCode ? null:
+            <p>Next.js</p>
+          }
+          <Component {...pageProps} />
+        </Provider>
+      
     )
   }
 }
