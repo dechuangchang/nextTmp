@@ -10985,5 +10985,15 @@ form .ant-input-group-wrapper {
   }
 }
 
+.about {
+  background: #b4f7bd;
+}
+.about ul {
+  font-size: 20px;
+}
+.about ul li {
+  color: red;
+}
+
 
 /*# sourceMappingURL=styles.chunk.css.map*/

@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import Link from 'next/link'
 import {getCurrency} from '../../js/actions/common';
 import {
   Form,
@@ -37,15 +37,13 @@ class App extends React.Component {
       
     }
     componentDidMount(){
-      console.log(this.props)
-      
      
     }
     render() {
       let {currencyList,getCurrency} = this.props
         return  <div className='home' style={{ marginTop: 100 }}>
         {
-          currencyList.map(item=><span key={item}>{item}</span>)
+          currencyList.map(item=><span key={item}>{item}index</span>)
         }
         <Form layout='horizontal'>
           <FormItem
@@ -96,8 +94,8 @@ class App extends React.Component {
             <DatePicker name='startDate' />
           </FormItem>
           <FormItem style={{ marginTop: 48 }} wrapperCol={{ span: 8, offset: 8 }}>
-            <Button size='large' type='primary' htmlType='submit'>
-              OK
+            <Button  size='large' type='primary' htmlType='submit'>
+            <Link href="/about"><a>OK</a></Link>
             </Button>
             <Button size='large' style={{ marginLeft: 8 }}>
               Cancel
